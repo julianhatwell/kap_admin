@@ -1,0 +1,41 @@
+---
+title: "Schedule Two"
+author: "Monthly Activity Report For The Month Of May 2016"
+output: pdf_document
+---
+
+```{r prologue, include=FALSE}
+require(knitr)
+```
+
+```{r schedule2, echo=FALSE}
+rate <- unlist(read.csv("C:\\Dev\\Work\\Kaplan\\rate.csv"))
+sched <- read.csv("C:\\Dev\\Work\\Kaplan\\Sched2 May 2016.csv")
+sched <- data.frame(sched
+                    , User_Acceptance = c("", "", "")
+                    , Authorised_By = c("", "", "")
+)
+kable(sched, col.names = c("Date", "Task/Deliverables", "No. Of Hours", "User Acceptance", "Remarks"))
+```
+
+Total No. Of Hours: `r sum(sched$hours)`  
+
+Contractor Fees ($`r rate`/hr): $`r sum(sched$hours) * rate`  
+
+
+Submitted By: Julian Hatwell  
+
+            Signature                      Date: `r format(Sys.time(), "%d %b %Y")`  
+  
+                
+![sig](sig.png)
+
+            
+  
+  
+  
+  
+  
+Authorised By:  
+
+            Signature                      Date:  
