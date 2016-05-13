@@ -11,9 +11,10 @@ require(knitr)
 ```{r schedule2, echo=FALSE}
 rate <- unlist(read.csv("C:\\Dev\\Work\\Kaplan\\rate.csv"))
 sched <- read.csv("C:\\Dev\\Work\\Kaplan\\Sched2 May 2016.csv")
+nr <- nrow(sched)
 sched <- data.frame(sched
-                    , User_Acceptance = c("", "", "")
-                    , Authorised_By = c("", "", "")
+                    , User_Acceptance = rep("", nr)
+                    , Authorised_By = rep("", nr)
 )
 kable(sched, col.names = c("Date", "Task/Deliverables", "No. Of Hours", "User Acceptance", "Remarks"))
 ```
